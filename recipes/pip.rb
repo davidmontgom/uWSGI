@@ -8,6 +8,10 @@ package "python-pip" do
   action :install
 end
 
+easy_install_package "pip" do
+  action :install, :upgrade
+end
+
 =begin
 python_pip "uwsgi" do
   version "1.9.14"
