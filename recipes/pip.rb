@@ -9,7 +9,7 @@ package "python-pip" do
 end
 
 easy_install_package "pip" do
-  action :install, :upgrade
+  action :upgrade
 end
 
 =begin
