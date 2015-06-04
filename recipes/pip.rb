@@ -33,6 +33,7 @@ end
 bash "install_uwsgi" do
   cwd "/usr/share"
   code <<-EOH
+    easy_install -U pip 
     UWSGI_EMBED_PLUGINS=msgpack pip install uwsgi==2.0.5.1
     #UWSGI_PROFILE=gevent pip install uwsgi==2.0.1
   EOH
