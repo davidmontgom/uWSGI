@@ -39,3 +39,7 @@ bash "install_uwsgi" do
   EOH
   not_if {File.exists?("/usr/local/bin/uwsgi")}
 end
+
+package "uwsgi-plugin-python" do
+  action :install
+end
