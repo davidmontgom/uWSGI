@@ -4,9 +4,11 @@ package "python-dev" do
   action :install
 end
 
+=begin
 package "python-pip" do
   action :install
 end
+=end
 
 =begin
 easy_install_package "pip" do
@@ -36,9 +38,10 @@ bash "install_uwsgi" do
   cwd "/usr/share"
   code <<-EOH
     #UWSGI_EMBED_PLUGINS=msgpack pip install uwsgi==2.0.5.1
-    pip install gevent==1.2
-    pip install uwsgi==2.0.15
+    #pip install gevent==1.2
+    #pip install uwsgi==2.0.15
     #UWSGI_PROFILE=gevent pip install uwsgi==2.0.1
+    pip install uwsgi==2.0.17.1
   EOH
   not_if {File.exists?("/usr/local/bin/uwsgi")}
 end
